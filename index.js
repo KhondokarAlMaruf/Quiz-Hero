@@ -60,7 +60,7 @@ const displayQuiz = (data) => {
   }
   // let quizDiv = document.getElementById("quiz-Container");
   data.forEach((quiz, i) => {
-    console.log(quiz);
+    // console.log(quiz);
 
     quizContainer.innerHTML += `<div class="m-3 py-3 px-4 shadow-sm rounded">
   <div class="flex items-center">
@@ -112,9 +112,10 @@ document.querySelector("#submit").addEventListener("click", () => {
 
   // data setting on local storage and getting data from local storage
   let storage = JSON.parse(localStorage.getItem("result"));
+  console.log(storage);
   if (storage) {
     localStorage.setItem(
-      "results",
+      "result",
       JSON.stringify([
         ...storage,
         {
@@ -126,7 +127,7 @@ document.querySelector("#submit").addEventListener("click", () => {
     );
   } else {
     localStorage.setItem(
-      "results",
+      "result",
       JSON.stringify([
         {
           marks: totalMark,
